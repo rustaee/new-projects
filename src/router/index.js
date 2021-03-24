@@ -20,6 +20,11 @@ const routes = [
     path: "/paint",
     name: "Paint",
     component: () => import("@/views/Paint.vue")
+  },
+  {
+    path: "/github",
+    name: "/Git",
+    component: () => import("@/views/GithubProfile.vue")
   }
 ];
 
