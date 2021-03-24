@@ -10,7 +10,7 @@
         />
       </form>
       <main class="main">
-        <!-- Loading -->
+        <!-- Loading  -->
         <base-loading v-if="loading"></base-loading>
         <!-- End Loading -->
         <div v-else-if="error" class="card">
