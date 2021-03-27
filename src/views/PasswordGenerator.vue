@@ -57,11 +57,6 @@
         Generate Password
       </button>
     </div>
-    {{ options.upper }}
-    {{ options.lower }}
-    {{ options.number }}
-    {{ options.symbol }}
-    {{ length }}
   </div>
 </template>
 <script>
