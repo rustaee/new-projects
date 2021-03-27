@@ -5,7 +5,7 @@
 
       <div class="result-container">
         <span class="result">{{ generatedPassword }}</span>
-        <button class="btn">
+        <button class="btn" @click="copyPassword()">
           <font-awesome-icon icon="copy" />
         </button>
       </div>
@@ -79,7 +79,6 @@ export default {
       generatedPassword: ""
     };
   },
-  computed: {},
   methods: {
     getRandomLower() {
       return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -124,6 +123,17 @@ export default {
           }
         }
         this.generatedPassword = pass.slice(0, this.length);
+      }
+    },
+    copyPassword() {
+      if (this.generatedPassword) {
+        const textarea = document.createElement("textarea");
+        textarea.value = this.generatedPassword;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+        alert("password has been copied!");
       }
     }
   }
