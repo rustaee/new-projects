@@ -27,7 +27,7 @@ const routes = [
     component: () => import("@/views/GithubProfile.vue")
   },
   {
-    path: "/password-genaretor",
+    path: "/password-generator",
     name: "Password",
     component: () => import("@/views/PasswordGenerator.vue")
   }
