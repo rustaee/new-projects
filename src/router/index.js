@@ -30,6 +30,11 @@ const routes = [
     path: "/password-generator",
     name: "Password",
     component: () => import("@/views/PasswordGenerator.vue")
+  },
+  {
+    path: "/hoverboard",
+    name: "Hover",
+    component: () => import("@/views/HoverBoard.vue")
   }
 ];
 

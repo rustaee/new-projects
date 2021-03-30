@@ -35,3 +35,10 @@ $font-size: 14px;
     align-items: center;
     justify-content: center;
 }
+
+%flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
