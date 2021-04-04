@@ -19,28 +19,63 @@ const routes = [
   {
     path: "/paint",
     name: "Paint",
-    component: () => import("@/views/Paint.vue")
+    component: () => import("@/views/Paint.vue"),
+    meta: {
+      title: "Painting App"
+    }
   },
   {
     path: "/github",
     name: "/Git",
-    component: () => import("@/views/GithubProfile.vue")
+    component: () => import("@/views/GithubProfile.vue"),
+    meta: {
+      title: "Github user search"
+    }
   },
   {
     path: "/password-generator",
     name: "Password",
-    component: () => import("@/views/PasswordGenerator.vue")
+    component: () => import("@/views/PasswordGenerator.vue"),
+    meta: {
+      title: "Password generated"
+    }
   },
   {
     path: "/hoverboard",
     name: "Hover",
-    component: () => import("@/views/HoverBoard.vue")
+    component: () => import("@/views/HoverBoard.vue"),
+    meta: {
+      title: "Hover Board"
+    }
+  },
+  {
+    path: "/todo",
+    name: "Todo",
+    component: () => import("@/views/Todo.vue"),
+    meta: {
+      title: "Todo List"
+    }
   }
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+});
+
+//To change the page title in each view
+router.beforeEach(to => {
+  // This goes through the matched routes from last to first, finding the closest route with a title.
+  // e.g., if we have `/some/deep/nested/route` and `/some`, `/deep`, and `/nested` have titles,
+  // `/nested`'s will be chosen.
+  const nearestWithTitle = to.matched
+    .slice()
+    .reverse()
+    .find(r => r.meta && r.meta.title);
+
+  if (nearestWithTitle) {
+    document.title = nearestWithTitle.meta.title;
+  }
 });
 
 export default router;
