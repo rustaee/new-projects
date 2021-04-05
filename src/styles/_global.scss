@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,600&display=swap');
 
 //****************//
 //    Variables  //
@@ -15,12 +15,18 @@ $font: 'Roboto', sans-serif;
 $font-titi: 'Titillium Web', sans-serif;
 $font-muli: 'Muli', sans-serif;
 $font-poppins: 'Poppins', sans-serif;
+$font-lora: 'Lora', sans-serif;
 $font-size: 14px;
 
 //****************//
 //    Mixins  //
 //**************//
-
+@mixin gradient-circle($mode, $property1,$property2,$property3){
+    background: -webkit-radial-gradient($mode, $property1,$property2,$property3);
+    background: -radial-gradient($mode, $property1,$property2,$property3);
+    background: -moz-radial-gradient($mode, $property1,$property2,$property3);
+    background: radial-gradient($mode, $property1,$property2,$property3);
+} 
 //****************//
 //    Extends  //
 //**************//

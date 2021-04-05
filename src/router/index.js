@@ -55,6 +55,22 @@ const routes = [
     meta: {
       title: "Todo List"
     }
+  },
+  {
+    path: "/cloud",
+    name: "Cloud",
+    component: () => import("@/views/Cloud.vue"),
+    meta: {
+      title: "Cloud"
+    }
+  },
+  {
+    path: "/weatherapp",
+    name: "Weather",
+    component: () => import("@/views/WeatherApp.vue"),
+    meta: {
+      title: "Weather App"
+    }
   }
 ];
 
