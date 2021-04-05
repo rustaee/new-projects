@@ -12,7 +12,7 @@
       </form>
       <div class="container" :class="divClass">
         <!-- Error -->
-        <div class="error" v-if="error">{{ error.message }}</div>
+        <div class="error" v-if="error">{{ error }}</div>
 
         <!-- Information -->
         <div class="info" v-else-if="info.temp">
@@ -48,7 +48,7 @@
             </h4>
           </div>
         </div>
-        <div v-else>Unable to fetch Weather</div>
+        <div v-else>Enter your city name to see the weather information</div>
       </div>
     </div>
   </div>
@@ -130,7 +130,7 @@ export default {
         this.info.sunrise = new Date(data.sys.sunrise * 1000);
         this.info.sunset = new Date(data.sys.sunset * 1000);
       } catch (err) {
-        this.error = err;
+        this.error = "Couldn't find the location.";
       }
     },
     changeLocation() {
