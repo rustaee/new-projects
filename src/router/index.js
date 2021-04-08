@@ -71,6 +71,14 @@ const routes = [
     meta: {
       title: "Weather App"
     }
+  },
+  {
+    path: "/tetris",
+    name: "Tetris",
+    component: () => import("@/views/Tetris.vue"),
+    meta: {
+      title: "Tetris"
+    }
   }
 ];
 
