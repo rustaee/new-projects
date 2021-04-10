@@ -27,6 +27,12 @@ $font-size: 14px;
     background: -moz-radial-gradient($mode, $property1,$property2,$property3);
     background: radial-gradient($mode, $property1,$property2,$property3);
 } 
+
+@mixin box-shadow($property){
+    -moz-box-shadow:    $property;
+   -webkit-box-shadow: $property;
+   box-shadow:         $property;
+}
 //****************//
 //    Extends  //
 //**************//
