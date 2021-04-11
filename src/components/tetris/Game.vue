@@ -1,6 +1,11 @@
 <template>
   <div class="tetris">
-    <h2 v-if="end">Game Over</h2>
+    <transition name="scale" mode="in-out" duration="1000">
+      <div class="game-over" v-if="end">
+        <h3>Game Over</h3>
+        <button class="again" @click="replay()">Start a new game</button>
+      </div>
+    </transition>
     <div class="info">
       <h3>
         Score: <span> {{ score }}</span>
@@ -550,6 +555,9 @@ export default {
         this.end = true;
         clearInterval(this.tetroInterval);
       }
+    },
+    replay() {
+      location.reload();
     }
   },
   mounted() {
@@ -604,6 +612,7 @@ export default {
       div {
         width: 30px;
         height: 30px;
+        caret-color: transparent;
         @include box-shadow(inset 0 0px 1px 0px rgba(0, 0, 0, 0.3));
         &.hidden {
           border: none;
@@ -627,11 +636,11 @@ export default {
     .grid,
     .mini-grid {
       .blue {
-        background-color: rgb(0, 102, 255);
+        background-color: #0094c6;
         @include box-shadow(inset 0 5px 10px 5px rgba(55, 0, 255, 0.5));
       }
       .orange {
-        background-color: rgb(252, 235, 0);
+        background-color: #f1d302;
         @include box-shadow(inset 05px 10px 5px rgba(192, 189, 0, 0.8));
       }
       .green {
@@ -643,7 +652,7 @@ export default {
         @include box-shadow(inset 0 5px 10px 5px rgba(136, 0, 95, 0.5));
       }
       .red {
-        background-color: rgb(167, 0, 0);
+        background-color: #ed1c24;
         @include box-shadow(inset 0 5px 10px 5px rgba(97, 0, 0, 0.5));
       }
     }
@@ -677,6 +686,97 @@ export default {
 
     .next-tetro {
       @extend %flex-column;
+      color: #fdfffc;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .game-over {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #020100;
+    @extend %flex-column;
+    animation: scale 0.5s ease-in;
+
+    h3 {
+      color: #ed1c24;
+      margin: 20px;
+      font-size: 2rem;
+    }
+
+    button {
+      background: #f1d302;
+      color: #020100;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        opacity: 0.9;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tetris .container {
+    .grid {
+      width: 240px;
+      height: 480px;
+
+      div {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .mini-grid {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 5px;
+
+      div {
+        height: 10px;
+        width: 10px;
+      }
+    }
+    .controls {
+      button {
+        background: #235789;
+        width: 30%;
+        padding: 5px;
+        margin: 1px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.3);
+        border: none;
+      }
+    }
+
+    .next-tetro {
       color: #fdfffc;
       justify-content: center;
       align-items: center;
