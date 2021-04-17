@@ -58,8 +58,8 @@ export default {
   data() {
     return {
       API: "a517dd7f3dacfc2bb943ba46377f7b2e", //OpenWeather API key
-      BaseUrl: "http://api.openweathermap.org/data/2.5/weather?",
-      IconUrl: "http://openweathermap.org/img/wn/",
+      BaseUrl: "https://api.openweathermap.org/data/2.5/weather?",
+      IconUrl: "https://openweathermap.org/img/wn/",
       latitude: null,
       longitude: null,
       error: null,

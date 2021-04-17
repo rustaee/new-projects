@@ -75,9 +75,17 @@ const routes = [
   {
     path: "/tetris",
     name: "Tetris",
-    component: () => import("@/views/Tetris.vue"),
+    component: () => import("@/views/games/Tetris.vue"),
     meta: {
       title: "Tetris"
+    }
+  },
+  {
+    path: "/fallgame",
+    name: "Fall",
+    component: () => import("@/views/games/FallGame.vue"),
+    meta: {
+      title: "Fall Game"
     }
   }
 ];
