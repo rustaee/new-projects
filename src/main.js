@@ -13,6 +13,8 @@ import {
   faPause,
   faPlay,
   faSpinner,
+  faStepBackward,
+  faStepForward,
   faSync
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -25,7 +27,9 @@ library.add(
   faArrowDown,
   faArrowRight,
   faArrowLeft,
-  faSync
+  faSync,
+  faStepForward,
+  faStepBackward
 );
 createApp(App)
   .use(store)

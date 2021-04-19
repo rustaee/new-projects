@@ -87,6 +87,14 @@ const routes = [
     meta: {
       title: "Fall Game"
     }
+  },
+  {
+    path: "/musicapp",
+    name: "MusicApp",
+    component: () => import("@/views/MusicApp.vue"),
+    meta: {
+      title: "Music App"
+    }
   }
 ];
 
