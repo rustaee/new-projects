@@ -95,6 +95,14 @@ const routes = [
     meta: {
       title: "Music App"
     }
+  },
+  {
+    path: "/chat",
+    name: "Chat",
+    component: () => import("@/views/FireChat.vue"),
+    meta: {
+      title: "Vue Chat"
+    }
   }
 ];
 
