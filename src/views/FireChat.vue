@@ -270,8 +270,9 @@ export default {
         padding-bottom: 100px;
 
         .message {
-          display: flex;
           margin-bottom: 15px;
+          word-wrap: break-word;
+          text-align: left;
 
           .message-inner {
             .username {
@@ -280,6 +281,7 @@ export default {
               margin-bottom: 5px;
               padding-left: 15px;
               padding-right: 15px;
+              text-align: left;
             }
 
             .content {
@@ -291,6 +293,7 @@ export default {
               font-size: 18px;
               line-height: 1.2em;
               text-align: left;
+              max-width: 100%;
             }
           }
 
@@ -300,11 +303,16 @@ export default {
             text-align: right;
 
             .message-inner {
-              max-width: 75%;
+              max-width: 100%;
+
+              .username {
+                text-align: right;
+              }
 
               .content {
                 color: #fff;
                 background-color: #c75146;
+                max-width: 100%;
               }
             }
           }
