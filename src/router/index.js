@@ -103,6 +103,14 @@ const routes = [
     meta: {
       title: "Vue Chat"
     }
+  },
+  {
+    path: "/multistepsform",
+    name: "MultiStepsForm",
+    component: () => import("@/views/MultiStepsForm.vue"),
+    meta: {
+      title: "Multi Steps Form"
+    }
   }
 ];
 
