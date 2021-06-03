@@ -111,6 +111,22 @@ const routes = [
     meta: {
       title: "Multi Steps Form"
     }
+  },
+  {
+    path: "/css-animations",
+    name: "Animations",
+    component: () => import("@/views/CssAnimations.vue"),
+    meta: {
+      title: "CSS Animations"
+    }
+  },
+  {
+    path: "/coffee-cup",
+    name: "Coffee",
+    meta: {
+      title: "Coffee Cup"
+    },
+    component: () => import("@/views/animations/CoffeeCup.vue")
   }
 ];
 

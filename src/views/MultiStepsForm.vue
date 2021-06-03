@@ -168,7 +168,7 @@ export default {
 .multi-steps-form {
   width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .container {
     @extend %flex-row;
@@ -180,7 +180,7 @@ export default {
   article {
     display: flex;
     margin: 10px;
-    width: calc(100% - 20px);
+    width: 80%;
     max-width: 720px;
     min-height: 480px;
     perspective: 1000px;
@@ -367,6 +367,29 @@ export default {
     }
     100% {
       transform: translateX(0);
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .multi-steps-form {
+    article {
+      width: 90%;
+    }
+    section {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .input-fields .input-container .input-label {
+        font-size: 1rem;
+      }
+
+      .action {
+        button {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }

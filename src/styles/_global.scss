@@ -35,6 +35,13 @@ $multi-steps-form-color: #DE369D;
    -webkit-box-shadow: $property;
    box-shadow:         $property;
 }
+
+@mixin animation-delay($propery){
+    animation-delay: $propery;
+    -webkit-animation-delay: $propery;
+    -moz-animation-delay: $propery;
+    -o-animation-delay: $propery;
+}
 //****************//
 //    Extends  //
 //**************//
