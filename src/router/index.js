@@ -113,11 +113,11 @@ const routes = [
     }
   },
   {
-    path: "/css-animations",
+    path: "/animations",
     name: "Animations",
     component: () => import("@/views/CssAnimations.vue"),
     meta: {
-      title: "CSS Animations"
+      title: "Effects & Animations"
     }
   },
   {
@@ -127,6 +127,22 @@ const routes = [
       title: "Coffee Cup"
     },
     component: () => import("@/views/animations/CoffeeCup.vue")
+  },
+  {
+    path: "/wavy-loader",
+    name: "Loader",
+    meta: {
+      title: "Wavy Loader"
+    },
+    component: () => import("@/views/animations/WavyLoader.vue")
+  },
+  {
+    path: "/animated-background",
+    name: "Background",
+    meta: {
+      title: "Animated Background"
+    },
+    component: () => import("@/views/animations/AnimatedBackground.vue")
   }
 ];
 
